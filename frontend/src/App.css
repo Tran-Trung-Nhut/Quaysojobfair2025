@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
+
+@keyframes shine {
+    0% { text-shadow: 0 0 5px #fff; }
+    50% { text-shadow: 0 0 20px #FFC850; }
+    100% { text-shadow: 0 0 5px #fff; }
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes appearBigger {
+    from{
+        scale: 0%;
+    }
+    to {
+        scale: 100%;
+    }
+}
+
+@keyframes blink-shadow {
+    from{
+        scale: 90%;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+    }
+    to {
+        scale: 100%;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    }
+}
+
+@keyframes blink {
+    from{
+        transform: scale(0.9);
+    }
+    to{
+        transform: scale(1.1)
+    }
+}
+
+@keyframes shine {
+    0% { text-shadow: 4px 4px 12px rgba(255, 215, 0, 0.7); }
+    100% { text-shadow: 4px 4px 20px rgba(255, 215, 0, 1); }
+}
+
+@keyframes spin {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+:root{
+    --animation-state: spin;
+}
+
+body{
+    margin: 0px;
+    font-family: 'Kanit', sans-serif;
+}
+
+
+h1, h2,p{
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    text-align: center;
+}
+
+.container{
+    display:  flex;
+    flex-direction: column;
+}
+
+
+.wheel-button-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.wheel-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.wheel-container > button{
+    z-index: 10;
+    border: none !important;
+    background-color: transparent;
+    position: absolute;
+    top: 34%;
+    left: 43%;
+}
+
+.wheel-container > button:hover{
+    animation: blink 0.5s infinite;
+}
+
+
+.wheel-container > button > img{
+    transform: rotate(81deg);
+    width: 70px;
+}
+
+.board-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.prizes-board{
+    border: 3px solid #002C99;
+    border-radius: 25px;
+    background-color: #FFC850;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 400px;
+}
+
+.prizes-board > div{
+    border-radius: 20px;
+    background-color: #002C99;
+    padding: 5px;
+}
+
+.prizes-board > p{
+    color:#002C99;
+    font-weight: bolder;
+    font-size: 24px;
+    text-shadow: 1px 1px 0 white, -1px -1px 0 white, -1px 1px 0 white, 1px -1px 0 white;
+}
+
+
+.bg-right-top-component {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    width: 250px;
+    object-fit: cover;
+}
+
+.bg-right-bottom-component {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    right: 0;
+    width: 150px;
+    object-fit: cover;
+}
+
+.bg-left-top-component {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 300px !important;
+    object-fit: cover;
+}
+
+
+.new-turn > button:hover{
+    color: white;
+    background-color: #002C99;
+    border: 3px solid white;
+    animation: none;
+}
+
+.new-turn > button:active{
+    transform: scale(0.9);
+}
+
+.spinning{
+    animation: none !important;
+    color: white !important;
+    border: none !important;
+    background-color: gray !important;
+    font-style: italic;
+}
+
+/* .sc-eCssSg{
+    width: 400px !important;
+    height: 400px !important;
+}
+
+.sc-gsTCUz{
+    width: 410px !important;
+    height: 410px !important;
+} */
+
+.sc-eCssSg{
+    animation: var(--animation-state) 4s linear infinite;
+}
+
+.cIKpxU{
+    display: none;
+}
+
+
+.new-turn, .minigame{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.minigame > p{
+    font-size: 60px;
+    font-weight: bolder;
+    color: #FFC850;
+}
+
+.minigame > p > span{
+    color: #002C99;
+}
+
+.new-turn{
+    margin-top: 20px;
+}
+
+.new-turn > button{
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 3px solid #002C99;
+    color: #002C99;
+    font-weight: bolder;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+    animation: blink-shadow 1s infinite;
+}
+
+.prize-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.prize-container > p{
+    flex: 1;
+    text-align: start;
+}
+
+.prize-img-container{
+    flex: 1
+}
+
+.textjf{
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}

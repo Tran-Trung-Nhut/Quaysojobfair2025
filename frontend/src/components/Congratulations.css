@@ -1,0 +1,112 @@
+.container-cong{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); 
+    z-index: 1000;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-cong{
+    width: 55%;
+    height: 70%;
+    background-color: white   ;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); 
+    border-radius: 5px;
+    padding: 5px;
+    animation: appearBigger 1s none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.container-fw{
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.logo > img{
+    border-radius: 25px;
+}
+
+.prize-rank {
+    font-size: 42px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #FFD700;
+    text-shadow: 4px 4px 5px rgba(255, 215, 0, 0.5);
+}
+
+
+
+.cong-winner-name {
+    font-size: 40px;
+    font-weight: bold;
+    color: #002C99;
+}
+
+.cong-winner-id {
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bold;
+    color: #555;
+}
+
+.cong-winner-faculty {
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFC850;
+}
+
+.prize-box {
+    background: #002C99;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+.cong-gift {
+    margin-block-start: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #FFD700;
+    text-shadow: 0px 0px 15px rgba(255, 215, 0, 0.8);
+}
+
+
+.cong-bg-right-top{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 140px;
+}
+
+.cong-bg-right-bottom{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 95px;
+}
+
+.cong-bg-left-top{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 95px;
+}
+
+.cong-bg-left-bottom{
+    position: absolute;
+    left: -7px;
+    bottom: -7px;
+    width: 155px;
+}
