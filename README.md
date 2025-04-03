@@ -62,6 +62,8 @@ Chọn ngẫu nhiên 10 sinh viên để đưa vào vòng quay.
 2. **Phím số 2**: Bắn pháo hoa loại 2. -> Để thoát, nhấn phím `Esc`.
 3. **Tổ hợp phím `Del + P`**: Xóa một giải thưởng (theo thứ tự từ cao tới thấp).
 4. **Tổ hợp phím `Del + S`**: Xóa danh sách sinh viên loại trừ hoặc đã gọi.
+5. **Phím y**: Thoát khỏi màng hình chúc mừng nếu **có** người lên nhận giải thưởng
+6. **Phím n**: Thoát khỏi màng hình chúc mừng nếu **không có** người lên nhận giải thưởng
 
 ### Lưu Ý:
 Khi sử dụng xong, hãy nhấn tổ hợp phím ở mục 3 và 4 trong phần phím tắt để loại bỏ những dữ liệu không cần thiết.
