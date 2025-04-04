@@ -270,3 +270,12 @@ h1, h2,p{
     transform: translateX(-50%);
     bottom: 0;
 }
+
+.bg-left-bottom-component {
+    position: absolute;
+    z-index: -1;
+    bottom: 0px;
+    left: 0px;
+    width: 255px;
+    object-fit: cover;;
+}

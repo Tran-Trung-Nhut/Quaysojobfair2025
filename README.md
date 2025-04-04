@@ -64,9 +64,8 @@ Chọn ngẫu nhiên 10 sinh viên để đưa vào vòng quay.
 4. **Tổ hợp phím `Del + S`**: Xóa danh sách sinh viên loại trừ hoặc đã gọi.
 5. **Phím y**: Thoát khỏi màng hình chúc mừng nếu **có** người lên nhận giải thưởng
 6. **Phím n**: Thoát khỏi màng hình chúc mừng nếu **không có** người lên nhận giải thưởng
+7. **Tổ hợp phím `Del + B`**: Chuyển sang chế độ quay số cho quà của doanh nghiệp
 
 ### Lưu Ý:
 Khi sử dụng xong, hãy nhấn tổ hợp phím ở mục 3 và 4 trong phần phím tắt để loại bỏ những dữ liệu không cần thiết.
-
-
 

@@ -14,13 +14,15 @@ const Congratulation = ({
     prize,
     setPrizes,
     setPrizesShow,
-    onCloseWindow
+    onCloseWindow,
+    isCompanyPrize
 } : {
     prizes: Student[],
     prize: number,
     setPrizes: (prizes: Student[]) => void;
     setPrizesShow: (prizes: Student[]) => void
     onCloseWindow: () => void
+    isCompanyPrize: boolean
 }) => {
     const [typeOfPrize, setTypeOfPrize] = useState<string>("")
     const [gift, setGift] = useState<string>("")
@@ -62,13 +64,21 @@ const Congratulation = ({
                 <div className="logo">
                     <img src={logojf}/>
                 </div>
-                <h1 className="prize-rank">{typeOfPrize.toUpperCase()}</h1>
+                {isCompanyPrize ? (
+                    <h1 className="prize-rank">CHÚC MỪNG</h1>
+                ) : (
+                    <h1 className="prize-rank">{typeOfPrize.toUpperCase()}</h1>
+                )}
 
                 <p className="cong-winner-name">{prizes[prize].name}</p>
                 <p className="cong-winner-id">{prizes[prize].id}</p>
                 <p className="cong-winner-faculty">{prizes[prize].faculty}</p>
 
-                <p className="cong-gift">{gift}</p>
+                {!isCompanyPrize ? (
+                    <p className="cong-gift">{gift}</p>
+                ) : (
+                    <p className="cong-gift">Đã nhận được phần quà từ quý công ty</p>
+                )}
             </div>
         </div>
     )

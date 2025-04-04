@@ -17,6 +17,7 @@ import third_prize from "./assets/third-prize.png"
 import textjf from "./assets/text_csejobfair.png"
 import { Student } from './dtos_&_data/dtos';
 import { defaultDataWheel, mssvDoanHoi } from './dtos_&_data/defaultData';
+import left_bottom from './assets/cong-right-bottom.png';
 
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
   const [isGetStudents, setIsGetStudents] = useState<boolean>(false)
   const [prizes, setPrizes] = useState<Student[]>([])
   const [prizesShow, setPrizesShow] = useState<Student[]>([])
+  const [isCompanyPrize, setIsCompanyPrize] = useState<boolean>(false)
 
   const isDeletePressRef = useRef(false);
 
@@ -134,6 +136,10 @@ const App = () => {
         setInvokedStudent(mssvDoanHoi)
         localStorage.setItem("invokedStudent", JSON.stringify(mssvDoanHoi))
       }
+
+      if (event.key === "b" && isDeletePressRef.current) {
+        setIsCompanyPrize(prev => !prev)
+      }
     }
 
     const handleKeyUp = (event: KeyboardEvent) => {
@@ -156,6 +162,9 @@ const App = () => {
         <img className='bg-right-top-component' src={right_top}/>
         <img className='bg-right-bottom-component' src={right_botton}/>
         <img className='bg-left-top-component' src={left_top}/>
+        {isCompanyPrize && (
+          <img className='bg-left-bottom-component' src={left_bottom}/>
+        )}
         <img className='textjf' src={textjf}/>
         {isShowWinner && (
           <Congratulation 
@@ -164,6 +173,7 @@ const App = () => {
           onCloseWindow={() => setIsShowWinner(false)}
           setPrizes={setPrizes}
           setPrizesShow={setPrizesShow}
+          isCompanyPrize={isCompanyPrize}
           />)}
         {isGetStudents && (<GetStudent students={students}/>)}
         <div className='minigame'>
@@ -171,62 +181,64 @@ const App = () => {
         </div>
         <div>
           <div className='wheel-button-container'>
-            <div className='board-container'>
-              <div className='prizes-board'>
-                <p>Giải thưởng</p>
-                <div>
-                  <p style={{color: "white", fontSize: "18px", fontWeight: "bold"}}>Giải nhất</p>
-                    <div className='prize-container'>
-                      <div className='prize-img-container'>
-                        <img src={first_prize}  style={{width: "100%"}}/>
-                      </div>
-                      <p style={{color: "white"}}>
-                        {prizesShow[2] === undefined? "Ổ cứng di động SSD Kingston XS1000 Gen 2 1TB Đen" : (
-                          <p>
-                            <span style={{color: "#FFC850", fontWeight: "bold"}}>{prizesShow[2].name}</span><br/>
-                            <span style={{fontStyle: "italic"}}>{prizesShow[2].id}</span><br/>
-                            <span>{prizesShow[2].faculty}</span>
-                        </p>
-                        )}
-                      </p>
-                    </div>
-                </div>
-                <div >
-                  <p style={{color: "white", fontSize: "18px", fontWeight: "bold"}}>Giải nhì</p>
-                    <div className='prize-container'>
-                      <div className='prize-img-container'>
-                        <img src={second_prize}  style={{width: "100%"}}/>
-                      </div>
-                      <p style={{color: "white"}}>
-                        {prizesShow[1] === undefined? "Loa di động kháng nước IPX6 SOUNARC R2 Portable Speaker" : (
-                          <p>
-                            <span style={{color: "#FFC850", fontWeight: "bold"}}>{prizesShow[1].name}</span><br/>
-                            <span style={{fontStyle: "italic"}}>{prizesShow[1].id}</span><br/>
-                            <span>{prizesShow[1].faculty}</span>
-                        </p>
-                        )}
-                      </p>
-                    </div>
-                </div>
-                <div>
-                  <p style={{color: "white", fontSize: "18px", fontWeight: "bold"}}>Giải ba</p>
-                    <div className='prize-container'>
-                      <div className='prize-img-container'>
-                        <img src={third_prize} style={{width: "100%"}}/>
-                      </div>
-                      <p style={{color: "white"}}>
-                        {prizesShow[0] === undefined? "Bàn phím AULA F75 (Đen + Xanh đậm + Cam/ Grey Wood V3 Switch)" : (
-                          <p>
-                            <span style={{color: "#FFC850", fontWeight: "bold"}}>{prizesShow[0].name}</span><br/>
-                            <span style={{fontStyle: "italic"}}>{prizesShow[0].id}</span><br/>
-                            <span>{prizesShow[0].faculty}</span>
+            {!isCompanyPrize && (
+              <div className='board-container'>
+                <div className='prizes-board'>
+                  <p>Giải thưởng</p>
+                  <div>
+                    <p style={{color: "white", fontSize: "18px", fontWeight: "bold"}}>Giải nhất</p>
+                      <div className='prize-container'>
+                        <div className='prize-img-container'>
+                          <img src={first_prize}  style={{width: "100%"}}/>
+                        </div>
+                        <p style={{color: "white"}}>
+                          {prizesShow[2] === undefined? "Ổ cứng di động SSD Kingston XS1000 Gen 2 1TB Đen" : (
+                            <p>
+                              <span style={{color: "#FFC850", fontWeight: "bold"}}>{prizesShow[2].name}</span><br/>
+                              <span style={{fontStyle: "italic"}}>{prizesShow[2].id}</span><br/>
+                              <span>{prizesShow[2].faculty}</span>
                           </p>
-                        )}
-                      </p>
-                    </div>
+                          )}
+                        </p>
+                      </div>
+                  </div>
+                  <div >
+                    <p style={{color: "white", fontSize: "18px", fontWeight: "bold"}}>Giải nhì</p>
+                      <div className='prize-container'>
+                        <div className='prize-img-container'>
+                          <img src={second_prize}  style={{width: "100%"}}/>
+                        </div>
+                        <p style={{color: "white"}}>
+                          {prizesShow[1] === undefined? "Loa di động kháng nước IPX6 SOUNARC R2 Portable Speaker" : (
+                            <p>
+                              <span style={{color: "#FFC850", fontWeight: "bold"}}>{prizesShow[1].name}</span><br/>
+                              <span style={{fontStyle: "italic"}}>{prizesShow[1].id}</span><br/>
+                              <span>{prizesShow[1].faculty}</span>
+                          </p>
+                          )}
+                        </p>
+                      </div>
+                  </div>
+                  <div>
+                    <p style={{color: "white", fontSize: "18px", fontWeight: "bold"}}>Giải ba</p>
+                      <div className='prize-container'>
+                        <div className='prize-img-container'>
+                          <img src={third_prize} style={{width: "100%"}}/>
+                        </div>
+                        <p style={{color: "white"}}>
+                          {prizesShow[0] === undefined? "Bàn phím AULA F75 (Đen + Xanh đậm + Cam/ Grey Wood V3 Switch)" : (
+                            <p>
+                              <span style={{color: "#FFC850", fontWeight: "bold"}}>{prizesShow[0].name}</span><br/>
+                              <span style={{fontStyle: "italic"}}>{prizesShow[0].id}</span><br/>
+                              <span>{prizesShow[0].faculty}</span>
+                            </p>
+                          )}
+                        </p>
+                      </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
             <div  className='wheel-container'>
               <button onClick={() => handleSpinClick()}>
                 <img src={pointer}/>
